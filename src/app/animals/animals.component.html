@@ -1,0 +1,27 @@
+
+<div style="padding-left: 25px; padding-right: 25px;">
+	<hr>
+	<h3>My Animals</h3>
+	<hr>
+	<div *ngFor="let animal of animals" style="padding: 25px"
+		class="col-1-3">
+
+
+		<div>
+		<a 
+				routerLink="/animal/{{animal.id}}"> 
+			<img width="200" height="200" src='{{animal.imageURL}}'
+				onerror="this.src='http://afpfc.com/images/no_image.gif'"
+				sizes="(max-width: 200px) 100vw, 200px"></a> &nbsp;
+		</div>
+
+		
+		<div style="text-align: center">
+			<h4>{{animal.commonName}}</h4>
+			<a class="btn btn-sm btn-success view"
+				routerLink="/animal/{{animal.id}}">View </a> &nbsp;
+			<button class="btn btn-sm btn-danger delete" title="delete animal"
+				(click)="deleteAnimal(animal)">Delete</button>
+		</div>
+	</div>
+</div>

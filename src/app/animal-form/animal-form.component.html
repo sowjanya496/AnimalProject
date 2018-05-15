@@ -1,0 +1,36 @@
+<div class="container">
+<hr>
+	<h4 style="text-align:center;color:green">Add New Animal</h4>
+	<hr>
+	<form [formGroup]="animalForm">
+
+		<div class="form-group">
+			<label for="cName">Common Name</label> <input type="text"
+				class="form-control" id="cName" formControlName="commonName"
+				required>
+		</div>
+		<span id="error_msg"></span>
+
+		<div class="form-group">
+			<label for="sName">Scientific Name</label> <input type="text"
+				class="form-control" formControlName="scientificName" required>
+		</div>
+
+		<div class="form-group">
+			<label for="family">Family</label> <input type="text"
+				class="form-control" formControlName="family" required>
+		</div>
+
+
+		<div class="form-group">
+			<label for="img">Image</label> <input type="text"
+				class="form-control" formControlName="imageURL" required>
+		</div>
+
+		<button type="submit" class="btn btn-success"
+			(click)="onSubmit(animalForm.value)">Add Animal</button>
+		&nbsp;
+		<button class="btn  btn-info" (click)="goBack()">Go back</button>
+	</form>
+
+</div>

@@ -1,0 +1,16 @@
+<div *ngIf="animal" style="padding-left: 25px;">
+	<h3 style="color: blue;">{{ animal.commonName }} Details:</h3>
+	<div>
+		<img width="200" height="200" src='{{animal.imageURL}}'
+			onerror="this.src='http://afpfc.com/images/no_image.gif'"
+			alt="No Image" sizes="(max-width: 200px) 100vw, 200px">
+	</div>
+	<br>
+	<ul>
+		<li>Common Name: &nbsp;{{animal.commonName}}</li>
+		<li>Scientific Name:&nbsp;{{animal.scientificName }}</li>
+		<li>Family :&nbsp;{{animal.family }}</li>
+		<li>Image URL :&nbsp;{{animal.imageURL }}</li>
+	</ul>
+	<button class="btn btn-sm btn-info" (click)="goBack()">Go back</button>
+</div>
