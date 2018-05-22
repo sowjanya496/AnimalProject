@@ -20,15 +20,6 @@ export class AnimalsComponent implements OnInit {
     this.animalService.getAnimals()
       .subscribe(animals => this.animals = animals['list']);
   }
-
-  addAnimal(animal: Animal): void {
-    //    commonName = animal.name.trim();
-    if (!name) {return;}
-    this.animalService.addAnimal(animal as Animal)
-      .subscribe(animal => {
-        this.animals.push(animal);
-      });
-  }
   getAnimal(id:string): void {
 
     console.log(id);
